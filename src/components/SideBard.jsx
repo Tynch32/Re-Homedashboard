@@ -4,12 +4,10 @@ export const SideBard = () => {
     const {pathname} = useLocation();
 
     return (
-        <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-
-            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
+        <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+            <Link className="" to="/">
                 <div className="sidebar-brand-icon">
-                    <img className="w-100" src="/images/logo-DH.png" alt="Digital House" />
+                    <img className="w-100" src="/images/utils/logo_sinFondo.png" alt="Digital House" />
                 </div>
             </Link>
 
@@ -19,8 +17,10 @@ export const SideBard = () => {
 
             <li className="nav-item active">
                 <Link className="nav-link" to="/">
-                    <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - DH movies</span></Link>
+                    <h5>
+                        <i className="fa-solid fa-chart-line"></i> Dashboard
+                    </h5>
+                    </Link>
             </li>
 
 
@@ -40,8 +40,24 @@ export const SideBard = () => {
 
             <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
                 <Link className="nav-link" to="/movies">
-                    <i className="fas fa-fw fa-film"></i>
-                    <span>MOVIES</span></Link>
+                    <i className="fa-solid fa-boxes-packing"></i>
+                    <span>PRODUCTOS</span></Link>
+            </li>
+
+            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
+                <Link className="nav-link" to="/movies">
+                    <i className="fa-solid fa-list"></i>
+                    <span>CATEGORÍAS</span></Link>
+            </li>
+            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
+                <Link className="nav-link" to="/movies">
+                    <i className="fa-solid fa-user"></i>
+                    <span>USUARIOS</span></Link>
+            </li>
+            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
+                <Link className="nav-link" to="/movies">
+                    <i className="fa-solid fa-cash-register"></i>
+                    <span>VENTAS</span></Link>
             </li>
 
             <hr className="sidebar-divider d-none d-md-block" />

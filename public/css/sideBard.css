@@ -1,0 +1,4 @@
+#accordionSidebar{
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
+    border-right: 2px black solid;
+}

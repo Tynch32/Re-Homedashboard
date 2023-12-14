@@ -1,0 +1,10 @@
+#topBar_body{
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
+}
+#topBar_logo i{
+    background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: large;
+}

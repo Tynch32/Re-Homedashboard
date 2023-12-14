@@ -1,14 +1,14 @@
 import { SideBard } from '../components/SideBard'
 import { TopBar } from "../components/TopBar"
 import { Footer } from "../components/Footer"
-import './app.css'
+import '../../public/css/styles.css'
+
 import { Outlet } from 'react-router-dom'
 
 
 export const Layaout = () => {
     return (
         <div id="wrapper">
-
             <SideBard />
             <div id="content-wrapper" >
                 <div id="content">

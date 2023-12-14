@@ -1,26 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const TopBar = () => {
     return (
-        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="topBar_body">
 
-
-            <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
+            {/* <button id="sidebarToggleTop" className="btn btn-dark d-md-none rounded-2px mr-3">
                 <i className="fa fa-bars"></i>
-            </button>
-
+            </button> */}
 
             <ul className="navbar-nav ml-auto">
 
-
-                <li className="nav-item dropdown no-arrow mx-1">
+                
+                {/* <li className="nav-item dropdown no-arrow mx-1">
                     <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
                         <i className="fas fa-bell fa-fw"></i>
-
                         <span className="badge badge-danger badge-counter">3+</span>
                     </a>
                 </li>
-
 
                 <li className="nav-item dropdown no-arrow mx-1">
                     <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
@@ -28,16 +25,17 @@ export const TopBar = () => {
 
                         <span className="badge badge-danger badge-counter">7</span>
                     </a>
-                </li>
+                </li> */}
 
                 <div className="topbar-divider d-none d-sm-block"></div>
 
 
                 <li className="nav-item dropdown no-arrow">
-                    <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                        <span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
-                        <img className="img-profile rounded-circle" src="/images/jordan-walke.png" alt="Jordan Walke - Creador de React" width="60" />
-                    </a>
+                    <Link className="nav-link dropdown-toggle" to="/" id="userDropdown">
+                        <span className="mr-2 d-none d-lg-inline text-white-600" id="topBar_logo">
+                            Panel de administrador <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </span>
+                    </Link>
                 </li>
 
             </ul>
