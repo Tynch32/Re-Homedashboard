@@ -1,15 +1,15 @@
 import { Card,Table } from 'react-bootstrap';
 import { TableItem } from './TableItem';
 
-export const TableMovies = () => {
+export const TableProducts = () => {
 
-  const movies = [
+  const products = [
     { 
       id:crypto.randomUUID(),
       title:"Rocky",
       length:120,
       rating:3,
-      genres:["Acción","Drama"],
+      categories:["Acción","Drama"],
       awards:5
     },
     {
@@ -17,7 +17,7 @@ export const TableMovies = () => {
       title:"Rambo",
       length:120,
       rating:1,
-      genres:["Acción","Bélico"],
+      categories:["Acción","Bélico"],
       awards:2
     },
     {
@@ -25,7 +25,7 @@ export const TableMovies = () => {
       title:"Batman",
       length:120,
       rating:6,
-      genres:["Acción","Suspenso"],
+      categories:["Acción","Suspenso"],
       awards:0
     }
   ]
@@ -43,7 +43,7 @@ export const TableMovies = () => {
         </tr>
       </thead>
       <tbody>
-        {movies.map(({id,title,length,rating,awards,genres})=> <TableItem key={id} title={title} length={length} rating={rating} awards={awards} genres={genres}/>)}
+        {products.map(({id,title,length,rating,awards,categories})=> <TableItem key={id} title={title} length={length} rating={rating} awards={awards} categories={categories}/>)}
       </tbody>
     </Table>
       </Card.Body>

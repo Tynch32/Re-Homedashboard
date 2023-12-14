@@ -1,11 +1,11 @@
-import { GenresInDb } from "../components/GenresInDb"
-import { LastMovieInDb } from "../components/LastMovieInDb"
+import { CategoriesInDb } from "../components/CategoriesInDb"
+import { LastProductInDb } from "../components/LastProductInDb"
 
 export const Home = () => {
   return (
     <div className="row">
-        <LastMovieInDb />
-        <GenresInDb />
+        <LastProductInDb/>
+        <CategoriesInDb />
     </div>
   )
 }

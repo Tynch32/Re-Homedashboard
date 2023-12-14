@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
 import { Paginator } from '../components/Paginator';
 import { FormSearch } from '../components/FormSearch';
-import { FormMovie } from '../components/FormMovie';
+import { FormProduct } from '../components/FormProduct';
 
-export const ListMovies = () => {
-    const [movie,setMovie] =useState(null);
-    const [movies, setMovies] = useState([]);
+export const ListProducts = () => {
+    const [product,setProduct] =useState(null);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [pagination, setPagination] = useState();
 
-    const getMovies = async (endpoint = "/api/v1/movies") => {
+    const getProducts = async (endpoint = "/api/products") => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:3001${endpoint}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`);
             const result = await response.json();
             setLoading(false)
-            setMovies(result.data);
+            setProducts(result.data);
             setPagination(result.meta)
         } catch (error) {
             console.log(error);
@@ -26,16 +26,16 @@ export const ListMovies = () => {
     };
 
     useEffect(() => {
-        getMovies();
+        getProducts();
     }, []);
 
     const handlePagination = async (event, endpoint) => {
         event.preventDefault();
-        await getMovies(endpoint)
+        await getProducts(endpoint)
     }
-    const handleAddMovie = async (data) => {
+    const handleAddProduct = async (data) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/v1/movies`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`,{
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -49,19 +49,19 @@ export const ListMovies = () => {
         }
     }
 
-    const handleEditMovie = async (id) => {
+    const handleEditProduct = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/v1/movies/${id}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`);
             const result = await response.json();
-            result.ok && setMovie(result.data); 
+            result.ok && setProduct(result.data); 
         } catch (error) {
             console.log(error);
         } 
     }
 
-    const handleUpdateMovie = async (id,data) =>{
+    const handleUpdateProduct = async (id,data) =>{
         try {
-            const response = await fetch(`http://localhost:3001/api/v1/movies/${id}`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`,{
                 method: 'PUT', 
                 headers: { 
                     'Content-Type' : 'application/json'
@@ -71,27 +71,27 @@ export const ListMovies = () => {
 
             const result = await response.json();
 
-            setMovies(
-                movies.map((movie)=>
-                movie.id===result.data.id ? result.data:movie)
+            setProducts(
+                products.map((product)=>
+                product.id===result.data.id ? result.data:product)
             );
-            setMovie(null);
+            setProduct(null);
             
         } catch (error) {
             console.log(error);
         }
     }
 
-    const handleDeleteMovie = async (id) => {
+    const handleDeleteProduct = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/v1/movies/${id}`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`,{
                 method: 'DELETE'
             });
 
             const result = await response.json();
             if(result.ok){
                 console.log(result);
-                setMovies(movies.filter(movie=>movie.id!==id))
+                setProducts(products.filter(product=>product.id!==id))
             }
         } catch (error) {
             console.log(error);
@@ -103,10 +103,10 @@ export const ListMovies = () => {
             <Col sm={12} lg={4}>
                 <Card className='mb-3'>
                     <Card.Header>
-                        <CardTitle>{movie?"Editar":"Agregar"}</CardTitle>
+                        <CardTitle>{product?"Editar":"Agregar"}</CardTitle>
                     </Card.Header>
                     <Card.Body>
-                        <FormMovie handleAddMovie={handleAddMovie} movie={movie}  handleUpdateMovie={handleUpdateMovie} setMovie={setMovie}/>
+                        <FormProduct handleAddProduct={handleAddProduct} product={product}  handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
                     </Card.Body>
                 </Card>
             </Col>
@@ -115,7 +115,7 @@ export const ListMovies = () => {
                     <Card.Body>
                         <div className="d-flex flex-column flex-md-row justify-content-between">
                             <FormSearch
-                                getMovies={getMovies}
+                                getProducts={getProducts}
                             />
                             <Paginator pagination={pagination} handlePagination={handlePagination} />
                         </div>
@@ -123,20 +123,22 @@ export const ListMovies = () => {
                             <Table striped bordered responsive>
                                 <thead>
                                     <tr>
-                                        <th>Título</th>
-                                        <th>Duración</th>
-                                        <th>Rating</th>
-                                        <th>Género</th>
-                                        <th>Premios</th>
+                                        <th>ID</th>
+                                        <th>Producto</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>Descuento</th>
+                                        <th>P. Final</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {movies.map((movie) => (
+                                    {products.map((product) => (
                                         <TableItem 
-                                            key={movie.id} 
-                                            movie={movie}
-                                            handleEditMovie={handleEditMovie}
-                                            handleDeleteMovie={handleDeleteMovie}
+                                            key={product.id} 
+                                            product={product}
+                                            handleEditProduct={handleEditProduct}
+                                            handleDeleteProduct={handleDeleteProduct}
                                         />
                                     ))}
                                 </tbody>

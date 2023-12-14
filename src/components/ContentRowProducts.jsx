@@ -1,11 +1,11 @@
 import { ContentRowItem } from "./ContentRowItem"
-export const ContentRowMovies = () => {
+export const ContentRowProducts = () => {
 
     const items = [
         {   
             id: crypto.randomUUID(),
             color:"primary",
-            title:"Movies in Data Base",
+            title:"Products in Data Base",
             value:21,
             icon: "fa-film"
         },

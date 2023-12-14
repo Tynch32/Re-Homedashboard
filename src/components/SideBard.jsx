@@ -38,24 +38,24 @@ export const SideBard = () => {
             </li>
 
 
-            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
-                <Link className="nav-link" to="/movies">
+            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
+                <Link className="nav-link" to="/products">
                     <i className="fa-solid fa-boxes-packing"></i>
                     <span>PRODUCTOS</span></Link>
             </li>
 
-            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
-                <Link className="nav-link" to="/movies">
+            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
+                <Link className="nav-link" to="/products">
                     <i className="fa-solid fa-list"></i>
                     <span>CATEGORÍAS</span></Link>
             </li>
-            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
-                <Link className="nav-link" to="/movies">
+            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
+                <Link className="nav-link" to="/products">
                     <i className="fa-solid fa-user"></i>
                     <span>USUARIOS</span></Link>
             </li>
-            <li className={`nav-item ${pathname=== '/movies' && 'active'}`}>
-                <Link className="nav-link" to="/movies">
+            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
+                <Link className="nav-link" to="/products">
                     <i className="fa-solid fa-cash-register"></i>
                     <span>VENTAS</span></Link>
             </li>

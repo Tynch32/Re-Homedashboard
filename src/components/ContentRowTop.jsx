@@ -1,6 +1,6 @@
 import { Home } from "../pages/home"
-import { ContentRowMovies } from "./ContentRowMovies"
-import { TableMovies } from "./TableMovies"
+import { ContentRowProducts } from "./ContentRowProducts"
+import { TableProducts } from "./TableProducts"
 
 export const ContentRowTop = () => {
     return (
@@ -9,8 +9,8 @@ export const ContentRowTop = () => {
                 <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
             </div>
 
-            <ContentRowMovies/>
-            <TableMovies/>
+            <ContentRowProducts/>
+            <TableProducts/>
         </div>
     )
 }
