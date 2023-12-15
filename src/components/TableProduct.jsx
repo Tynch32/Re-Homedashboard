@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 
-export const TableItem = ({ product: {id, name,price,discount,product_category}, handleEditProduct, handleDeleteProduct}) => {
+export const TableProduct = ({ product: {id, name,price,discount,product_category}, handleEditProduct, handleDeleteProduct}) => {
     function addPuntos(numero) {
         return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
@@ -26,11 +26,11 @@ export const TableItem = ({ product: {id, name,price,discount,product_category},
     )
 }
 
-TableItem.propTypes = {
+TableProduct.propTypes = {
     product: PropTypes.object,
     handleEditProduct:PropTypes.func,
     handleDeleteProduct:PropTypes.func
 }
-TableItem.defaultProps={
+TableProduct.defaultProps={
     category: {name:"-"}
 }

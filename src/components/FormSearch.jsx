@@ -13,7 +13,7 @@ export const FormSearch = ({getProducts}) => {
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        getProducts(`/api/v1/products?keyword=${valuesForm.keyword}`)
+        getProducts(`/api/products?keyword=${valuesForm.keyword}`)
     }
 
   return (

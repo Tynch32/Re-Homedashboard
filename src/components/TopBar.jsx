@@ -33,7 +33,7 @@ export const TopBar = () => {
                 <li className="nav-item dropdown no-arrow">
                     <Link className="nav-link dropdown-toggle" to="/" id="userDropdown">
                         <span className="mr-2 d-none d-lg-inline text-white-600" id="topBar_logo">
-                            Panel de administrador <i class="fa-solid fa-screwdriver-wrench"></i>
+                            Panel de Administrador <i class="fa-solid fa-screwdriver-wrench"></i>
                         </span>
                     </Link>
                 </li>

@@ -1,5 +1,5 @@
 import { Card, CardTitle, Col, Row, Table } from 'react-bootstrap';
-import { TableItem } from '../components/TableItem';
+import { TableProduct } from '../components/TableProduct';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
 import { Paginator } from '../components/Paginator';
@@ -134,7 +134,7 @@ export const ListProducts = () => {
                                 </thead>
                                 <tbody>
                                     {products.map((product) => (
-                                        <TableItem 
+                                        <TableProduct 
                                             key={product.id} 
                                             product={product}
                                             handleEditProduct={handleEditProduct}
