@@ -1,29 +1,6 @@
 import { ContentRowItem } from "./ContentRowItem"
 export const ContentRowProducts = () => {
-
-    const items = [
-        {   
-            id: crypto.randomUUID(),
-            color:"primary",
-            title:"Products in Data Base",
-            value:21,
-            icon: "fa-film"
-        },
-        {
-            id: crypto.randomUUID(),
-            color:"success",
-            title:"Total awards",
-            value:79,
-            icon: "fa-award"
-        },
-        {
-            id: crypto.randomUUID(),
-            color:"warning",
-            title:"Actor quantity",
-            value:49,
-            icon: "fa-user"
-        }
-    ]
+    
     return (
         <div className="row">
             {

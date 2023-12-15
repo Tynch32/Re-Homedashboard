@@ -1,14 +1,17 @@
 import PropTypes from "prop-types"
 
-export const TableItem = ({ product: {id, title, length, rating, category, awards}, handleEditProduct, handleDeleteProduct}) => {
-    
+export const TableItem = ({ product: {id, name,price,discount,product_category}, handleEditProduct, handleDeleteProduct}) => {
+    function addPuntos(numero) {
+        return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
     return (
         <tr>
-            <td>{title}</td>
-            <td>{length} min</td>
-            <td>{rating}</td>
-            <td>{category?.name}</td>
-            <td>{awards}</td>
+            <td>{id}</td>
+            <td>{name}</td>
+            <td>{product_category.name}</td>
+            <td>${addPuntos(Math.floor(price))}</td>
+            <td>{discount?<b>{discount}%</b>:"-"}</td>
+            <td>${addPuntos(Math.floor(price - (price * discount / 100)))}</td>
             <td>
                 <div className="d-flex">
                     <button className="btn btn-sm btn-outline-dark mr-3" onClick={()=> handleEditProduct(id)}>
@@ -29,5 +32,5 @@ TableItem.propTypes = {
     handleDeleteProduct:PropTypes.func
 }
 TableItem.defaultProps={
-    category: {name:"Sin genero asignado"}
+    category: {name:"-"}
 }
