@@ -9,7 +9,7 @@ export const FormProduct = ({handleAddProduct, product, setProduct, handleUpdate
     const [categories,setCategories]=useState([]);
 
     const getCategories = async () => {
-        let response = await fetch(`${import.meta.env.VITE_API_URL}/api/category`);
+        let response = await fetch(`${import.meta.env.VITE_API_URL}/api/category/all`);
         let result = await response.json();
         setCategories(result.data)
     };
@@ -26,7 +26,7 @@ export const FormProduct = ({handleAddProduct, product, setProduct, handleUpdate
                 price: product.price,
                 discount: product.discount,
                 description: product.description,
-                category_id:product.category_id
+                category_id:product.product_category.id
             })
         }
 
@@ -61,7 +61,7 @@ const handleCancel = (event) =>{
                 <Form.Control type="text" 
                 name="name"
                 onChange={formik.handleChange}
-                value={formik.values.product}
+                value={formik.values.name}
                 placeholder='Nombre del producto...'>
                 </Form.Control>  
                 {
@@ -72,7 +72,7 @@ const handleCancel = (event) =>{
                 <Form.Label>Precio</Form.Label>
                 <Form.Control type="number" name="price"
                 onChange={formik.handleChange}
-                value={formik.values.price}></Form.Control>
+                value={Math.floor(formik.values.price)}></Form.Control>
                 {
                     formik.errors.price && <small className='sm-2 text-danger'>{formik.errors.price}</small>
                 }
@@ -86,7 +86,7 @@ const handleCancel = (event) =>{
                     formik.errors.discount && <small className='sm-2 text-danger'>{formik.errors.discount}</small>
                 }
             </Form.Group>
-            <Form.Group className='mb-3 col-12 col-md-6'>
+            <Form.Group className='mb-3 col-12 col-md-12'>
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control type="text" name="description"
                 onChange={formik.handleChange}
@@ -104,12 +104,9 @@ const handleCancel = (event) =>{
                     <option hidden>Selecciona...</option>
                     {
                         categories.map(({name,id})=>
-                        <option key={id} value={id}>{name}</option>)
+                        <option key={id} value={id} selected={formik.values.category_id==id}>{name}</option>)
                     }
                 </Form.Select>
-                {
-                    formik.errors.category_id && <small className='sm-2 text-danger'>{formik.errors.category_id}</small>
-                }
             </Form.Group>
             <Form.Group className='mb-3 col-12'>
                 <div className='d-flex justify-content-between'>

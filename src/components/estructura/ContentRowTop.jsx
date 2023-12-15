@@ -1,4 +1,4 @@
-import { Home } from "../pages/home"
+import { Home } from "../../pages/home"
 import { ContentRowProducts } from "./ContentRowProducts"
 import { TableProducts } from "./TableProducts"
 

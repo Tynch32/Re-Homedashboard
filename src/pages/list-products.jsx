@@ -2,8 +2,8 @@ import { Card, CardTitle, Col, Row, Table } from 'react-bootstrap';
 import { TableProduct } from '../components/products/TableProduct';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
-import { Paginator } from '../components/Paginator';
-import { FormSearch } from '../components/FormSearch';
+import { Paginator } from '../components/products/Paginator';
+import { FormSearch } from '../components/products/FormSearch';
 import { FormProduct } from '../components/products/FormProduct';
 
 export const ListProducts = () => {
@@ -51,7 +51,7 @@ export const ListProducts = () => {
 
     const handleEditProduct = async (id) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`);
             const result = await response.json();
             result.ok && setProduct(result.data); 
         } catch (error) {
@@ -61,7 +61,7 @@ export const ListProducts = () => {
 
     const handleUpdateProduct = async (id,data) =>{
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`,{
                 method: 'PUT', 
                 headers: { 
                     'Content-Type' : 'application/json'
@@ -84,7 +84,7 @@ export const ListProducts = () => {
 
     const handleDeleteProduct = async (id) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`,{
                 method: 'DELETE'
             });
 
@@ -106,7 +106,7 @@ export const ListProducts = () => {
                         <CardTitle>{product?"Editar":"Agregar"}</CardTitle>
                     </Card.Header>
                     <Card.Body>
-                        <FormProduct handleAddProduct={handleAddProduct} product={product}  handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
+                        <FormProduct handleAddProduct={handleAddProduct} product={product} handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
                     </Card.Body>
                 </Card>
             </Col>
