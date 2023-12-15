@@ -1,10 +1,10 @@
 import { Card, CardTitle, Col, Row, Table } from 'react-bootstrap';
-import { TableProduct } from '../components/TableProduct';
+import { TableProduct } from '../components/products/TableProduct';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
 import { Paginator } from '../components/Paginator';
 import { FormSearch } from '../components/FormSearch';
-import { FormProduct } from '../components/FormProduct';
+import { FormProduct } from '../components/products/FormProduct';
 
 export const ListProducts = () => {
     const [product,setProduct] =useState(null);

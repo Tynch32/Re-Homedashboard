@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap'
 import { useFormik } from 'formik';
 import propTypes from 'prop-types'
-import { validate } from '../validations/product-validator';
+import { validate } from '../../validations/product-validator';
 
 export const FormProduct = ({handleAddProduct, product, setProduct, handleUpdateProduct}) => {
 

@@ -1,5 +1,5 @@
-import { CategoriesInDb } from "../components/CategoriesInDb"
-import { LastProductInDb } from "../components/LastProductInDb"
+import { CategoriesInDb } from "../components/home/CategoriesInDb"
+import { LastProductInDb } from "../components/home/LastProductInDb"
 
 export const Home = () => {
   return (

@@ -1,6 +1,6 @@
-import { SideBard } from '../components/SideBard'
-import { TopBar } from "../components/TopBar"
-import { Footer } from "../components/Footer"
+import { SideBard } from '../components/estructura/SideBard'
+import { TopBar } from "../components/estructura/TopBar"
+import { Footer } from "../components/estructura/Footer"
 import '../../public/css/styles.css'
 
 import { Outlet } from 'react-router-dom'
