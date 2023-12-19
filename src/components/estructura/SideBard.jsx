@@ -44,18 +44,18 @@ export const SideBard = () => {
                     <span>PRODUCTOS</span></Link>
             </li>
 
-            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
-                <Link className="nav-link" to="/products">
+            <li className={`nav-item ${pathname=== '/categories' && 'active'}`}>
+                <Link className="nav-link" to="/categories">
                     <i className="fa-solid fa-list"></i>
                     <span>CATEGORÍAS</span></Link>
             </li>
-            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
-                <Link className="nav-link" to="/products">
+            <li className={`nav-item ${pathname=== '/users' && 'active'}`}>
+                <Link className="nav-link" to="/users">
                     <i className="fa-solid fa-user"></i>
                     <span>USUARIOS</span></Link>
             </li>
-            <li className={`nav-item ${pathname=== '/products' && 'active'}`}>
-                <Link className="nav-link" to="/products">
+            <li className={`nav-item ${pathname=== '/ventas' && 'active'}`}>
+                <Link className="nav-link" to="/ventas">
                     <i className="fa-solid fa-cash-register"></i>
                     <span>VENTAS</span></Link>
             </li>
