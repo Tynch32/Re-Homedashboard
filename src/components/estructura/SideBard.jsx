@@ -54,11 +54,11 @@ export const SideBard = () => {
                     <i className="fa-solid fa-user"></i>
                     <span>USUARIOS</span></Link>
             </li>
-            <li className={`nav-item ${pathname=== '/ventas' && 'active'}`}>
+            {/* <li className={`nav-item ${pathname=== '/ventas' && 'active'}`}>
                 <Link className="nav-link" to="/ventas">
                     <i className="fa-solid fa-cash-register"></i>
                     <span>VENTAS</span></Link>
-            </li>
+            </li> */}
 
             <hr className="sidebar-divider d-none d-md-block" />
         </ul>

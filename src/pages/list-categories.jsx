@@ -2,7 +2,6 @@ import { Card, Col, Row, Table } from 'react-bootstrap';
 import { TableCategory } from '../components/categories/TableCategory';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
-import { ListGraphicCategories } from '../components/categories/ListGraphicCategories';
 
 export const ListCategories = () => {
     const [categories, setCategories] = useState([]);
@@ -28,7 +27,6 @@ export const ListCategories = () => {
             <Col sm={12} lg={12}>
                 <Card className="shadow mb-5">
                     <Card.Body>
-                        <ListGraphicCategories/>
                         {
                             <Table striped bordered responsive>
                                 <thead>
