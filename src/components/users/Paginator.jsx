@@ -11,7 +11,7 @@ export const Paginator = ({
                 {
                     pagination.currentPage !== 1 && (
                         <li className="page-item">
-                            <a className="page-link" href="#" aria-label="Previous" onClick={() => handlePagination(event, `/api/v1/users?page=${pagination.currentPage - 1}&limit=8`)}>
+                            <a className="page-link" href="#" aria-label="Previous" onClick={() => handlePagination(event, `/api/users?page=${pagination.currentPage - 1}&limit=8`)}>
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -31,7 +31,7 @@ export const Paginator = ({
                 {
                     pagination.currentPage !== pagination.pages[pagination.pages.length -1].number && (
                         <li className="page-item">
-                            <a className="page-link" href="#" aria-label="Next" onClick={() => handlePagination(event, `/api/v1/users?page=${pagination.currentPage + 1}&limit=8`)}>
+                            <a className="page-link" href="#" aria-label="Next" onClick={() => handlePagination(event, `/api/users?page=${pagination.currentPage + 1}&limit=8`)}>
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
