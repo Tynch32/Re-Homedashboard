@@ -1,0 +1,24 @@
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #c9c9c9;
+    border-color: #858585;
+    text-shadow: 2px 2px 2px black;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #dddfeb;
+}
+.page-link:hover {
+    color:black;
+    background-color: #c9c9c9;
+}
+.btn.input-group-text{
+    border-radius: 0px 5px 5px 0px;
+}

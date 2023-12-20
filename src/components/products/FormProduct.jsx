@@ -24,7 +24,7 @@ export const FormProduct = ({handleAddProduct, product, setProduct, handleUpdate
             formik.setValues({
                 name: product.name,
                 price: product.price,
-                discount: product.discount,
+                discount: product.discount||0,
                 description: product.description,
                 category_id:product.product_category.id
             })
@@ -37,13 +37,13 @@ const formik = useFormik({
     initialValues :{
         name:"",
         price:"",
-        discount:"",
+        discount:0,
         description: "",
         category_id:"",
     },
     validate,
     onSubmit : (values) =>{
-        product ? handleUpdateProduct(product.id,values): 
+        product ? handleUpdateProduct(product.id,values):
         handleAddProduct(values);
         formik.handleReset();
     }
