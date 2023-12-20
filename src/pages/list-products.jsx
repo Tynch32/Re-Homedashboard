@@ -103,7 +103,7 @@ export const ListProducts = () => {
             <Col sm={12} lg={4}>
                 <Card className='mb-3'>
                     <Card.Header>
-                        <CardTitle>{product?"Editar":"Agregar"}</CardTitle>
+                        <CardTitle>{product?("Editar: "+product.name):"Agregar Producto"}</CardTitle>
                     </Card.Header>
                     <Card.Body>
                         <FormProduct handleAddProduct={handleAddProduct} product={product} handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
