@@ -22,7 +22,22 @@ export const ListUsers = () => {
         getUsers();
     }, []);
 
-    return loading ? (<Loading />) : (
+    const handleEditUser = async (id) => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/${id}`,{
+                method: 'PUT', 
+                headers: { 
+                    'Content-Type' : 'application/json'
+                }});
+            const result = await response.json();
+            await result.ok && setProduct(result.data);
+            getUsers()
+        } catch (error) {
+            console.log(error);
+        } 
+    }
+
+    return (
         <Row>
             <Col sm={12} lg={12}>
                 <Card className="shadow mb-5">
@@ -46,6 +61,7 @@ export const ListUsers = () => {
                                         <TableUser 
                                             key={user.id} 
                                             user={user}
+                                            handleEditUser={handleEditUser}
                                         />
                                     ))}
                                 </tbody>
