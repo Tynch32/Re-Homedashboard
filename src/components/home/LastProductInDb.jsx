@@ -36,7 +36,7 @@ export const LastProductInDb = () => {
                     <h5 className="m-0 font-weight-bold text-gray-800">{lastProduct.name}</h5>
                     <div className="text-center">
                         {console.log(url)}
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "25rem" }} src={url} alt="Ultimo producto"/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "35rem" }} src={url} alt="Ultimo producto"/>
                     </div>
                     <h5 className="m-0 font-weight-bold text-gray-800"> $ {precio}</h5>
                     <p>{lastProduct.description}</p>

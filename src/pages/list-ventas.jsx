@@ -1,25 +1,25 @@
 import { Card, Col, Row, Table } from 'react-bootstrap';
-import { Tableventa } from '../components/ventas/Tableventa';
+import { TableVentas } from '../components/ventas/TableVentas';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
 
-export const Listventas = () => {
-    const [ventas, setventas] = useState([]);
+export const ListVentas = () => {
+    const [ventas, setVentas] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const getventas = async (endpoint = "/api/ventas") => {
+    const getVentas = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:3000${endpoint}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/topsales`);
             const result = await response.json();
             setLoading(false)
-            setventas(result.data);
+            setVentas(result.data);
         } catch (error) {
             console.log(error);
         }
     };
     useEffect(() => {
-        getventas();
+        getVentas();
     }, []);
 
     return loading ? (<Loading />) : (
@@ -31,20 +31,18 @@ export const Listventas = () => {
                             <Table striped bordered responsive>
                                 <thead>
                                     <tr>
-                                        <td>Id</td>
-                                        <td>Nombre</td>
-                                        <td>Apellido</td>
-                                        <td>Email</td>
+                                        <td>#</td>
+                                        <td>Producto</td>
+                                        <td>Cantidad</td>
+                                        <td>Precio</td>
                                         <td>Fecha de Registro</td>
-                                        <td>Rol</td>
-                                        <td>Cambiar Rol</td>
-                                        <td>Eliminar</td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {ventas.map((venta) => (
-                                        <Tableventa 
-                                            key={venta.id} 
+                                    {ventas.map((venta,index) => (
+                                        <TableVentas
+                                            i={index}
+                                            key={index} 
                                             venta={venta}
                                         />
                                     ))}
