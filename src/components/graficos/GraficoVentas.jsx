@@ -12,29 +12,29 @@ export const options = {
 }
 
 export default function GraficoVentas(){
-    const [categories, setCategories] = useState([]);
+    const [ventas, setVentas] = useState([]);
 
-    const getCategories = async (endpoint = "/api/category/all") => {
+    const getVentas = async () => {
         try {
-            const response = await fetch(`http://localhost:3000${endpoint}`);
+            const response = await fetch(`http://localhost:3000/api/products/topsales`);
             const result = await response.json();
-            let categorias=[["Categorias","Cant. Productos"]]
-            result.data.forEach(dato=>{
-                categorias.push([dato.name,dato.product_category.length]);
-            }
-            )
-            setCategories(categorias)
+            let ventas=[["Mes","Recaudación"]]
+            result.data.forEach(venta => {
+                let fecha = [venta.fecha.split("-")[1],venta.precio]
+                ventas.push(fecha);
+            });
+            setVentas(ventas)
         } catch (error) {
             console.log(error);
         }
     };
     useEffect(() => {
-        getCategories();
+        getVentas();
     }, []);
     return (
         <Chart
-        chartType='PieChart'
-        data={categories}
+        chartType='LineChart'
+        data={ventas}
         options={options}
         width={"100%"}
         height={"100%"}

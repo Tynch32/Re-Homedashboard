@@ -2,6 +2,7 @@ import { Card, Col, Row, Table } from 'react-bootstrap';
 import { TableVentas } from '../components/ventas/TableVentas';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
+import GraficoVentas from '../components/graficos/GraficoVentas';
 
 export const ListVentas = () => {
     const [ventas, setVentas] = useState([]);
@@ -24,7 +25,7 @@ export const ListVentas = () => {
 
     return loading ? (<Loading />) : (
         <Row>
-            <Col sm={12} lg={12}>
+            <Col sm={12} lg={6}>
                 <Card className="shadow mb-5">
                     <Card.Body>
                         {
@@ -42,7 +43,7 @@ export const ListVentas = () => {
                                     {ventas.map((venta,index) => (
                                         <TableVentas
                                             i={index}
-                                            key={index} 
+                                            key={venta.id} 
                                             venta={venta}
                                         />
                                     ))}
@@ -51,6 +52,18 @@ export const ListVentas = () => {
                         }
                     </Card.Body>
                 </Card>
+            </Col>
+            <Col sm={12} lg={6}>
+                <Card className="shadow mb-5">
+                    <div className='card-header py-3'>
+                            <h5 className="m-0 font-weight-bold text-gray-800">Cantidad de ventas por mes</h5>
+                        </div>
+                        <Card.Body>
+                            <div className="grafico_category">
+                                <GraficoVentas/>
+                            </div>
+                        </Card.Body>
+                </Card>        
             </Col>
         </Row>
 
