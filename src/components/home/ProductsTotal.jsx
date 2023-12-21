@@ -24,7 +24,7 @@ export const ProductsTotal = () => {
                         <div className="col-lg-6 mb-4">
                             <div className="card bg-dark text-white shadow">
                                 <div className="card-body">
-                                <i class="fa-solid fa-boxes-packing"></i> {products} Productos en Total
+                                <i className="fa-solid fa-boxes-packing"></i> {products} Productos en Total
                                 </div>
                             </div>
                         </div>

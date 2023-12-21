@@ -100,16 +100,6 @@ export const ListProducts = () => {
 
     return loading ? (<Loading />) : (
         <Row>
-            <Col sm={12} lg={4}>
-                <Card className='mb-3'>
-                    <Card.Header>
-                        <CardTitle>{product?("Editar: "+product.name):"Agregar Producto"}</CardTitle>
-                    </Card.Header>
-                    <Card.Body>
-                        <FormProduct handleAddProduct={handleAddProduct} product={product} handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
-                    </Card.Body>
-                </Card>
-            </Col>
             <Col sm={12} lg={8}>
                 <Card className="shadow mb-5">
                     <Card.Body>
@@ -144,6 +134,16 @@ export const ListProducts = () => {
                                 </tbody>
                             </Table>
                         }
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+                <Card className='mb-3'>
+                    <Card.Header>
+                        <CardTitle>{product?("Editar: "+product.name):"Seleccione un producto para editar"}</CardTitle>
+                    </Card.Header>
+                    <Card.Body>
+                        <FormProduct handleAddProduct={handleAddProduct} product={product} handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
                     </Card.Body>
                 </Card>
             </Col>

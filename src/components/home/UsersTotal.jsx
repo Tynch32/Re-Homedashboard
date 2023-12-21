@@ -24,7 +24,7 @@ export const UsersTotal = () => {
                         <div className="col-lg-6 mb-4">
                             <div className="card bg-dark text-white shadow">
                                 <div className="card-body">
-                                <i class="fa-solid fa-user"></i> {users} Usuarios Registrados
+                                <i className="fa-solid fa-user"></i> {users} Usuarios Registrados
                                 </div>
                             </div>
                         </div>

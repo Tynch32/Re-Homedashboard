@@ -109,10 +109,12 @@ const handleCancel = (event) =>{
                 </Form.Select>
             </Form.Group>
             <Form.Group className='mb-3 col-12'>
+                {product&&
                 <div className='d-flex justify-content-between'>
-                    <Button onClick={handleCancel} type="submit" className='w-100' variant='outline-secondary'>Cancelar</Button>
-                    <Button type="submit" className='w-100' variant='outline-dark'>Guardar</Button>
+                    <Button onClick={handleCancel} type="submit" className='buttons_edit' variant='outline-secondary'>Cancelar</Button>
+                    <Button type="submit" className='buttons_edit' variant='outline-dark'>Guardar</Button>
                 </div>
+                }
             </Form.Group>
             
             
