@@ -24,7 +24,7 @@ export const VentasTotal = () => {
                         <div className="col-lg-8 mb-4">
                             <div className="card bg-dark text-white shadow">
                                 <div className="card-body">
-                                <i class="fa-solid fa-cash-register"></i> {ventas} Ventas realizadas
+                                <i className="fa-solid fa-cash-register"></i> {ventas} Ventas realizadas
                                 </div>
                             </div>
                         </div>

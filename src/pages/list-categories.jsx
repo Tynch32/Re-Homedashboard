@@ -2,7 +2,7 @@ import { Card, Col, Row, Table } from 'react-bootstrap';
 import { TableCategory } from '../components/categories/TableCategory';
 import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
-import { LinesChart} from '../components/graficos/LinesChart'
+import Grafico from '../components/graficos/Grafico';
 
 export const ListCategories = () => {
     const [categories, setCategories] = useState([]);
@@ -25,7 +25,7 @@ export const ListCategories = () => {
 
     return loading ? (<Loading />) : (
         <Row>
-            <Col sm={12} lg={6}>
+            <Col sm={12} lg={4}>
                 <Card className="shadow mb-5">
                     <Card.Body>
                         {
@@ -50,13 +50,15 @@ export const ListCategories = () => {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col sm={12} lg={8}>
                 <Card className="shadow mb-5">
+                    <div className='card-header py-3'>
+                            <h5 className="m-0 font-weight-bold text-gray-800">Cantidad de productos por categoría</h5>
+                        </div>
                     <Card.Body>
-                        <h5 className="m-0 font-weight-bold text-gray-800">Cantidad de productos por categoría</h5>
-                        <br/>
-                        <LinesChart/>
-                        
+                        <div className="grafico_category">
+                            <Grafico/>
+                        </div>
                     </Card.Body>
                 </Card>
             </Col>
