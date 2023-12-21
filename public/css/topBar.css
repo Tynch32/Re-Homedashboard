@@ -8,3 +8,8 @@
     color: transparent;
     font-size: large;
 }
+@media (min-width:500px) {
+    .logo_img_topbar{
+        display: none;
+    }
+}

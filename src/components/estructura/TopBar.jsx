@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const TopBar = () => {
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="topBar_body">
-
+            <img className="h-100 logo_img_topbar" src="/images/utils/logo_sinFondo2.png" alt="Digital House" />
             {/* <button id="sidebarToggleTop" className="btn btn-dark d-md-none rounded-2px mr-3">
                 <i className="fa fa-bars"></i>
             </button> */}

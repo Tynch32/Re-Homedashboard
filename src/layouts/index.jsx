@@ -9,7 +9,9 @@ import { Outlet } from 'react-router-dom'
 export const Layaout = () => {
     return (
         <div id="wrapper">
-            <SideBard/>
+            <div className='side_Bar'>
+                <SideBard/>
+            </div>
             <div id="content-wrapper" >
                 <div id="content">
                     <TopBar />

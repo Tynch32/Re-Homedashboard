@@ -62,7 +62,7 @@ const handleCancel = (event) =>{
                 name="name"
                 onChange={formik.handleChange}
                 value={formik.values.name}
-                placeholder='Nombre del producto...'>
+                placeholder='Nombre del producto...' disabled={product?false:true}>
                 </Form.Control>  
                 {
                     formik.errors.name && <small className='sm-2 text-danger'>{formik.errors.name}</small>
@@ -72,7 +72,8 @@ const handleCancel = (event) =>{
                 <Form.Label>Precio</Form.Label>
                 <Form.Control type="number" name="price"
                 onChange={formik.handleChange}
-                value={Math.floor(formik.values.price)}></Form.Control>
+                value={Math.floor(formik.values.price)} disabled={product?false:true}>
+                </Form.Control>
                 {
                     formik.errors.price && <small className='sm-2 text-danger'>{formik.errors.price}</small>
                 }
@@ -81,7 +82,8 @@ const handleCancel = (event) =>{
                 <Form.Label>Descuento</Form.Label>
                 <Form.Control type="number" name="discount"
                 onChange={formik.handleChange}
-                value={formik.values.discount}></Form.Control>
+                value={formik.values.discount} disabled={product?false:true}>
+                </Form.Control>
                 {
                     formik.errors.discount && <small className='sm-2 text-danger'>{formik.errors.discount}</small>
                 }
@@ -90,7 +92,8 @@ const handleCancel = (event) =>{
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control type="text" name="description"
                 onChange={formik.handleChange}
-                value={formik.values.description}></Form.Control>
+                value={formik.values.description} disabled={product?false:true}>
+                </Form.Control>
                 {
                     formik.errors.description && <small className='sm-2 text-danger'>{formik.errors.description}</small>
                 }
@@ -100,7 +103,7 @@ const handleCancel = (event) =>{
                 <Form.Select className='form-control'
                 name="category_id"
                 onChange={formik.handleChange}
-                value={formik.values.category_id}>
+                value={formik.values.category_id} disabled={product?false:true}>
                     <option hidden>Selecciona...</option>
                     {
                         categories.map(({name,id})=>

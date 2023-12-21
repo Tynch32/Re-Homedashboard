@@ -7,3 +7,11 @@
 .buttons_edit{
     width: 45%;
 }
+.d-lg-inline{
+    display: inline!important;
+}
+@media (max-width:500px){
+    .side_Bar{
+       display: none;
+    }
+}
