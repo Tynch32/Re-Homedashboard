@@ -3,7 +3,7 @@ import { Chart } from 'react-google-charts';
 import { useEffect, useState } from 'react';
 
 export const options = {
-    title:"Categorías",
+    title:"Recaudación por día",
     is3D:true,
     animation: {
         duration: 1000, // Duración de la animación en milisegundos
@@ -18,11 +18,27 @@ export default function GraficoVentas(){
         try {
             const response = await fetch(`http://localhost:3000/api/products/topsales`);
             const result = await response.json();
-            let ventas=[["Mes","Recaudación"]]
+            let ventas=[["Dias","Recaudación"]]
+            let data =[]
             result.data.forEach(venta => {
-                let fecha = [venta.fecha.split("-")[1],venta.precio]
-                ventas.push(fecha);
+                let fecha = [venta.fecha.split("-")[2].split("T")[0],venta.precio]
+                data.push(fecha);
             });
+            const sumasPorFecha = {};
+            data.forEach(([fecha, numero]) => {
+                if (sumasPorFecha[fecha]) {
+                  sumasPorFecha[fecha] += numero;
+                } else {
+                  sumasPorFecha[fecha] = numero;
+                }
+              });
+            const nuevoArray = Object.entries(sumasPorFecha).map(([fecha, suma]) => [fecha, suma]);
+            const compararPorPrimerElemento = (a, b) => a[0] - b[0];
+            const arrayOrdenado = nuevoArray.sort(compararPorPrimerElemento);
+            arrayOrdenado.forEach(element=>
+              ventas.push(element)  
+            );
+
             setVentas(ventas)
         } catch (error) {
             console.log(error);
@@ -33,7 +49,7 @@ export default function GraficoVentas(){
     }, []);
     return (
         <Chart
-        chartType='LineChart'
+        chartType='BarChart'
         data={ventas}
         options={options}
         width={"100%"}

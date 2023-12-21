@@ -56,7 +56,7 @@ export const ListVentas = () => {
             <Col sm={12} lg={6}>
                 <Card className="shadow mb-5">
                     <div className='card-header py-3'>
-                            <h5 className="m-0 font-weight-bold text-gray-800">Cantidad de ventas por mes</h5>
+                            <h5 className="m-0 font-weight-bold text-gray-800">Cantidad de ventas del ultimo mes</h5>
                         </div>
                         <Card.Body>
                             <div className="grafico_category">
