@@ -141,6 +141,7 @@ export const ListProducts = () => {
                 <Card className='mb-3'>
                     <Card.Header>
                         <CardTitle>{product?("Editar: "+product.name):"Seleccione un producto para editar"}</CardTitle>
+                        {/* Desactive los botones del FormProduct hasta agregar imagen por fetch */}
                     </Card.Header>
                     <Card.Body>
                         <FormProduct handleAddProduct={handleAddProduct} product={product} handleUpdateProduct={handleUpdateProduct} setProduct={setProduct}/>
