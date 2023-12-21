@@ -32,10 +32,10 @@ export const ListVentas = () => {
                                 <thead>
                                     <tr>
                                         <td>#</td>
-                                        <td>Producto</td>
+                                        <td>Codigo de Producto</td>
                                         <td>Cantidad</td>
-                                        <td>Precio</td>
-                                        <td>Fecha de Registro</td>
+                                        <td>Precio de Venta</td>
+                                        <td>Fecha de la Venta</td>
                                     </tr>
                                 </thead>
                                 <tbody>
